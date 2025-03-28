@@ -1,0 +1,386 @@
+<!--Per visualizzare correttamente la pagina web sviluppata, è consigliabile seguire i seguenti passaggi:
+-	Creare sul proprio PC una cartella all’interno della quale deve essere creato il file .html (es. Index.html);
+-	Copiare e incollare tutto il testo presente in questa sezione;
+-	Salvare il file.
+
+Aprire il progetto in VS Code
+
+-	Assicurarsi di avere Visual Studio Code installato sul proprio computer.
+-	Aprire VS Code e selezionare File → Apri cartella...
+-	Navigare fino alla cartella in cui è stato salvato il file index.html e selezionare Apri.
+-	Avviare la pagina web nel browser
+
+Una volta aperta la cartella del progetto in VS Code, seguire uno dei seguenti metodi per visualizzare il file nel browser:
+
+Metodo 1: Aprire il file direttamente
+-	Nel menù laterale di VS Code, cliccare sull’icona “estensioni” e cercare Live Server;
+-	Una volta trovato, installarlo.
+-	Dopo l’installazione, sempre nella barra laterale sinistra, cliccare sull’icona “folders”, qui sarà visibile il file index.html.
+-	Fare clic destro su di esso e selezionare “Apri con Live Server” (se è stata installata l’estensione "Live Server").
+Il browser si aprirà automaticamente mostrando la pagina web.
+
+
+Metodo 2: Aprire il file manualmente nel browser
+
+-	Fai clic destro sul file index.html nella barra laterale di VS Code.
+-	Seleziona Reveal in File Explorer (su Windows) o Mostra nel Finder (su macOS).
+-	Una volta trovato il file nella cartella, fai doppio clic per aprirlo nel browser predefinito.-->
+
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Sostenibilità IBM</title>
+    <style>
+        /*----------STILE PER IL CORPO DELLA PAGINA-----------------------------------------------*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(90deg, #004182, #007bb5);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: #043361;
+            color: white;
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        footer .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        footer .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        footer .footer-column h3 {
+            border-bottom: 2px solid white;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff9900;
+        }
+
+        .hero {
+            background-image: url(https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/ibs/ul/sus/f2/ee/the-state-of-sustainability-readiness-2024-leadspace-2.component.xl.ts=1730316353757.png/content/adobe-cms/it/it/think/reports/sustainability-readiness/_jcr_content/root/leadspace_container/leadspace);
+            background-color: #fff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 138px 20px;
+            text-align: start;
+        }
+
+        .hero img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .p-style {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .img-style {
+            width: 35px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .position-icon {
+            display: flex;
+            justify-content: end;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .button {
+            height: 40px;
+            width: 120px;
+            border-radius: 6%;
+            background-color: rgb(4, 4, 171);
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, transform 0.1s ease
+        }
+
+        .contenuto h2 {
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header div {
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            height: 35px;
+            width: 650px;
+            margin-bottom: 70px;
+            border-radius: 10px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+        }
+
+        /*----------FINE SEZIONE DEDICATA ALLO STILE--------------------------------------*/
+    </style>
+</head>
+
+<body>
+    <!-----------------------------Header con logo, titolo e menu di navigazione---------------------------------->
+    <header style="background-color: #000; color: #fff; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <svg height="100px" id="形状_1_1_" style="enable-background:new 0 0 512 512;" version="1.1"
+                viewBox="0 0 512 512" width="510px" xml:space="preserve" sodipodi:docname="ibm_logo_white.svg"
+                inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs20" />
+                <sodipodi:namedview id="namedview18" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+                    inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
+                    inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="0.4609375" inkscape:cx="256"
+                    inkscape:cy="257.08475" inkscape:window-width="1920" inkscape:window-height="1112"
+                    inkscape:window-x="2552" inkscape:window-y="-8" inkscape:window-maximized="1"
+                    inkscape:current-layer="形状_1_1_" />
+                <g id="形状_1" style="fill:#ffffff">
+                    <g id="g14" style="fill:#ffffff">
+                        <path
+                            d="M414.154,163.646l-4.717,13.202h76.573v-13.202H414.154z     M357.63,176.871l-4.654-13.235l-71.095,0.009c-0.021,0,0.023,13.207,0.023,13.227    C281.904,176.887,357.664,176.852,357.63,176.871z M255.998,176.868c-8.678-7.922-18.863-12.096-30.58-13.227l-98.289-0.003    c0,0,0,13.213,0,13.229C127.129,176.881,255.998,176.868,255.998,176.868z M26.001,176.845h89.525v-13.203H26.001V176.845z     M400.662,201.62h85.349v-13.139h-80.722C405.317,188.487,400.662,201.62,400.662,201.62z M281.877,201.636h84.549l-4.632-13.156    h-79.917V201.636z M127.153,201.615h142.589c0-5.093-2.011-8.801-3.709-13.14h-138.88V201.615z M26.001,201.615h89.525v-13.14    H26.001V201.615z M460.701,213.271l-64.085-0.019l-4.685,13.199l68.77-0.029V213.271z M307.086,226.452h68.122l-4.669-13.203    h-63.453V226.452z M270.873,213.247h-40.928v13.205h39.041C270.305,222.49,270.873,217.773,270.873,213.247z M89.434,213.312    h-38.48v13.138h38.48V213.312z M153.055,213.247v13.202h38.414v-13.202H153.055z M460.678,250.719v-13.141h-72.676    c-0.008-0.027-4.306,12.261-4.327,12.253l-4.479-12.25h-72.11v13.138h37.843c0.008-0.019-0.003-10.011-0.003-10.011l3.477,9.992    l71.115,0.019L423,240.71c0,0,0.019,9.99,0.021,10.009H460.678z M263.327,237.572c-0.001,0.002-0.002,0.004-0.003,0.006h0.003    V237.572z M153.052,250.719c0,0.019,99.336,0,99.336,0c4.149-3.395,8.522-8.739,10.936-13.141h-110.27    C153.055,237.602,153.052,250.7,153.052,250.719z M50.954,250.717h38.48v-13.142h-38.48V250.717z M460.678,262.352h-37.656v13.139    h37.656V262.352z M307.086,262.352v13.139c-0.02-0.007,37.851,0.004,37.851,0c0-0.007,0.043-13.139-0.011-13.139H307.086z     M357.189,275.513l53.638-0.022c0.178-0.007,4.417-13.158,4.589-13.139h-62.945C352.474,262.332,357.147,275.492,357.189,275.513z     M264.021,275.49c-3.206-4.717-7.296-9.369-11.822-13.143h-99.15c0,0.014,0.003,13.136,0.003,13.143    C153.052,275.494,264.201,275.483,264.021,275.49z M89.428,262.348h-38.41c0,0,0.008,13.136,0,13.136    c-0.008,0,38.392,0.003,38.41,0.003V262.348z M423.021,300.263h37.653v-13.141h-37.653V300.263z M307.083,300.261h37.843v-13.139    h-37.843V300.261z M365.815,300.266c0,0,36.196,0.113,36.205,0.059c0.011-0.059,4.645-13.214,4.717-13.202h-45.597    C361.062,287.116,365.815,300.266,365.815,300.266z M192.036,300.266c0.035,0,0-13.146,0-13.146h-38.983    c-0.003,0.003,0,13.194,0,13.142C153.052,300.249,191.999,300.266,192.036,300.266z M230.635,287.119v13.202h41.306    c-0.376-4.527-0.564-9.241-2.449-13.202H230.635z M51.018,300.258h38.41v-13.139h-38.41V300.258z M423.021,324.53h62.987v-13.145    h-62.987V324.53z M281.875,324.53h63.051v-13.145h-63.051V324.53z M374.316,324.53h19.231l4.447-13.145h-28.293L374.316,324.53z     M115.46,311.394c0.037,0-89.568-0.008-89.463-0.008v13.139h89.463C115.497,324.545,115.419,311.394,115.46,311.394z     M127.148,324.524H264.15l1.182,0.006c3.168-3.524,4.031-8.81,4.973-13.145H127.148V324.524z M383.062,349.33h1.77l4.613-13.171    h-10.878L383.062,349.33z M423.019,349.361h62.99v-13.202h-62.99V349.361z M127.129,349.33l0.019,0.005l96.195,0.026    c12.824-0.186,24.731-4.869,33.409-13.165c-0.371,0-129.623-0.016-129.623-0.016V349.33z M281.875,349.361h63.051v-13.202h-63.051    V349.361z M25.997,336.181c0.024,0-0.024,13.149,0,13.175c0.026,0.027,89.5-0.025,89.463-0.025c-0.041,0,0-13.113,0-13.113    C115.419,336.261,25.972,336.181,25.997,336.181z"
+                            style="fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff" id="path12" />
+                    </g>
+                </g>
+            </svg>
+            <h1 style="margin: 0; font-size: 24px;">Report di Sostenibilità</h1>
+            <nav style="margin-left: 300px;">
+                <ul style="list-style: none; display: flex; margin: 0; padding: 0; gap: 20px; font-size: 18px;">
+                    <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/IBM" style="color: white; text-decoration: none;">Chi
+                            Siamo</a></li>
+                    <li><a href="https://www.ibm.com/downloads/documents/us-en/10c31775a25403e5"
+                            style="color: white; text-decoration: none;">Report</a></li>
+                    <li><a href="https://www.ibm.com/contact" style="color: white; text-decoration: none;"
+                            target="_blank">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--------------------------------------------FINE HEADER----------------------------------------------->
+
+    </header>
+
+    <main>
+        <!---------------------Corpo principale della pagina---------------------------------------------->
+        <div class="hero">
+            <!---------------------Titolo della sezione principale------------------------------>
+            <h1 class="h1-style" style="margin-left: 300px; width: 500px; color: #043361; font-family: auto;">
+                Benvenuti nel Report di Sostenibilità IBM
+            </h1>
+            <p class="text-start" style="margin-left: 300px; color: #043361; font-family: auto;">
+                Scopri di più sul nostro impegno per un futuro sostenibile.
+            </p>
+            <div class="contenuto" style="margin-bottom: 40px; font-family: auto;">
+                <div class="text-start" style="margin-left: 300px; color: #043361;">
+                    <h2>Le Nostre Aree di Interesse</h2>
+                    <ul>
+                        <li style="margin-bottom: 10px;">Sostenibilità ambientale</li>
+                        <li style="margin-bottom: 10px;">Innovazione tecnologica responsabile</li>
+                        <li style="margin-bottom: 10px;">Diversità e inclusione</li>
+                    </ul>
+                </div>
+            </div>
+            <!--------------------------------------Pulsante per il download del report---------------------------->
+            <div class="button"
+                style="background-color: blue; width: 153px; height: 33px; text-align: center; padding-top: 15px; border-radius: 10px; margin-left: 300px;">
+                <a href="https://www.ibm.com/downloads/documents/us-en/10c31775a25403e5" target="_blank"
+                    style="color: #f4f4f9; text-decoration: none;">
+                    Scarica Report
+                </a>
+            </div>
+
+        </div>
+    </main>
+    <!--------------------------------------FINE CORPO PRINCIPALE-------------------------------------->
+
+    <!--------------------------------------------INIZIO FOOTER----------------------------------------------->
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Contatti</h3>
+                <ul>
+                    <li>Email: infoibm.com</li>
+                    <li>Telefono: +39 123 456 789</li>
+                    <li>Indirizzo: Via Roma 123</li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Risorse</h3>
+                <ul>
+                    <li><a href="https://it.wikipedia.org/wiki/IBM">Chi siamo</a></li>
+                    <li><a href="#">Stampa</a></li>
+                    <li><a href="#">Lavora con noi</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Eventi</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Servizi</h3>
+                <ul>
+                    <li><a href="#">Assistenza clienti</a></li>
+                    <li><a href="#">Documentazione</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#">Termini di servizio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="background-color: white;width: auto; height: 1px; margin-bottom: 20px;"> </div>
+
+        <div class="position-icon">
+            <a href="https://www.facebook.com/IBM" target="_blank" aria-label="Vai alla pagina Facebook">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg viewBox="0 0 50 50" width="50px" height="50px" version="1.1" id="svg12"
+                    sodipodi:docname="facebook-bianco.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <defs id="defs16" />
+                    <sodipodi:namedview id="namedview14" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+                        inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
+                        inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="4.72" inkscape:cx="25"
+                        inkscape:cy="25.105932" inkscape:window-width="1920" inkscape:window-height="1112"
+                        inkscape:window-x="2552" inkscape:window-y="-8" inkscape:window-maximized="1"
+                        inkscape:current-layer="svg12" />
+                    <path
+                        d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"
+                        id="path10" style="fill:#ffffff" />
+                </svg>
+
+            </a>
+            <a href="https://www.instagram.com/IBM" target="_blank" aria-label="Vai alla pagina Instagram">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg viewBox="0 0 50 50" width="50px" height="50px" version="1.1" id="svg12"
+                    sodipodi:docname="instagram_bianco.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <defs id="defs16" />
+                    <sodipodi:namedview id="namedview14" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+                        inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
+                        inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="4.72" inkscape:cx="25"
+                        inkscape:cy="25.105932" inkscape:window-width="1920" inkscape:window-height="1112"
+                        inkscape:window-x="2552" inkscape:window-y="-8" inkscape:window-maximized="1"
+                        inkscape:current-layer="svg12" />
+                    <path
+                        d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"
+                        id="path10" style="fill:#ffffff" />
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@IBM" target="_blank" aria-label="Vai alla pagina YouTube">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg viewBox="0 0 50 50" width="50px" height="50px" version="1.1" id="svg12"
+                    sodipodi:docname="youtube_bianco.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <defs id="defs16" />
+                    <sodipodi:namedview id="namedview14" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+                        inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
+                        inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="4.72" inkscape:cx="25"
+                        inkscape:cy="25.105932" inkscape:window-width="1920" inkscape:window-height="1112"
+                        inkscape:window-x="2552" inkscape:window-y="-8" inkscape:window-maximized="1"
+                        inkscape:current-layer="svg12" />
+                    <path
+                        d="M 24.402344 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.402344 16.898438 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.902344 40.5 17.898438 41 24.5 41 C 31.101563 41 37.097656 40.5 40.597656 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.097656 35.5 C 45.5 33 46 29.402344 46.097656 24.902344 C 46.097656 20.402344 45.597656 16.800781 45.097656 14.300781 C 44.699219 12.101563 42.800781 10.5 40.597656 10 C 37.097656 9.5 31 9 24.402344 9 Z M 24.402344 11 C 31.601563 11 37.398438 11.597656 40.199219 12.097656 C 41.699219 12.5 42.898438 13.5 43.097656 14.800781 C 43.699219 18 44.097656 21.402344 44.097656 24.902344 C 44 29.199219 43.5 32.699219 43.097656 35.199219 C 42.800781 37.097656 40.800781 37.699219 40.199219 37.902344 C 36.597656 38.601563 30.597656 39.097656 24.597656 39.097656 C 18.597656 39.097656 12.5 38.699219 9 37.902344 C 7.5 37.5 6.300781 36.5 6.101563 35.199219 C 5.300781 32.398438 5 28.699219 5 25 C 5 20.398438 5.402344 17 5.800781 14.902344 C 6.101563 13 8.199219 12.398438 8.699219 12.199219 C 12 11.5 18.101563 11 24.402344 11 Z M 19 17 L 19 33 L 33 25 Z M 21 20.402344 L 29 25 L 21 29.597656 Z"
+                        id="path10" style="fill:#ffffff" />
+                </svg>
+
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

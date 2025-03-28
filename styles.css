@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f70c1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1f70c1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-button:hover {
+    background-color: #174a8c;
+}
+
+.background-image {
+    background-image: url('/assets/sfondo_report.jpg');
+    /* Percorso dell'immagine */
+    background-size: cover;
+    /* Adatta l'immagine per coprire l'intera area */
+    background-position: center;
+    /* Centra l'immagine */
+    background-repeat: no-repeat;
+    /* Evita la ripetizione */
+    height: calc(100vh - 200px);
+    /* Altezza dinamica: tutta la finestra meno header e footer */
+}
+
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+}
